@@ -72,8 +72,9 @@ var FB_API_ = (function (mtr) {
 
         // Native login
         facebookConnectPlugin.login(options.requestPermissions, function (res) {
-          var opts = _lodash2.default.assign(_lodash2.default.pickBy(res.authResponse,
+          var opts = _lodash2.default.assign(_lodash2.default.pick(res.authResponse,
             ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
+          
           Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
         }, function (err) {
           console.error('err', err)

@@ -13,7 +13,7 @@ const FB_API_Login_Handler_ = (mtr => {
   // Include all fields from facebook
   // http://developers.facebook.com/docs/reference/login/public-profile-and-friend-list/
   let _fields = ['id', 'email', 'name', 'first_name', 'last_name', 'link', 'gender', 'locale', 'age_range']
-  let _apiUri = 'https://graph.facebook.com/v3.0/me'
+  let _apiUri = 'https://graph.facebook.com/v2.12/me'
 
   // ------------------------------------------------------------------------
   // Class Definition
