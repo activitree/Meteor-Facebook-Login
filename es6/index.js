@@ -2,7 +2,7 @@
 
 // import 'bas-meteor-utils'
 import './init'
-import './lib'
+// import './lib'
 
 if (Meteor.isServer) {
   require('./server')

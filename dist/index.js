@@ -3,7 +3,7 @@
 
 // require('bas-meteor-utils')
 require('./init')
-require('./lib')
+// require('./lib')
 
 if (Meteor.isServer) {
   require('./server')
