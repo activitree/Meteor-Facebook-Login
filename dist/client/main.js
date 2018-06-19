@@ -43,7 +43,7 @@ var FB_API_ = (function (mtr) {
   // Constants
   // ------------------------------------------------------------------------
 
-  var VERSION = BasMTR.Utils.VERSION
+  // var VERSION = BasMTR.Utils.VERSION
 
   // ------------------------------------------------------------------------
   // Class Definition
@@ -82,15 +82,6 @@ var FB_API_ = (function (mtr) {
           console.error('err', err)
           callback(err, null)
         })
-      }
-
-      // Static Private
-      // ------------------------------------------------------------------------
-
-    }, {
-      key: 'VERSION',
-      get: function get () {
-        return VERSION
       }
     }])
 

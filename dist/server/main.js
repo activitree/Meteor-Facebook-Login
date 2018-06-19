@@ -41,7 +41,7 @@ var FB_API_Login_Handler_ = (function (mtr) {
   // Constants
   // ------------------------------------------------------------------------
 
-  var VERSION = BasMTR.Utils.VERSION
+  // var VERSION = BasMTR.Utils.VERSION
 
   // ------------------------------------------------------------------------
   // Vars
@@ -132,11 +132,6 @@ var FB_API_Login_Handler_ = (function (mtr) {
       // Static Private
       // ------------------------------------------------------------------------
 
-    }, {
-      key: 'VERSION',
-      get: function get () {
-        return VERSION
-      }
     }])
 
     return FB_API_Login_Handler_
