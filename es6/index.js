@@ -1,8 +1,6 @@
 /* globals Meteor, BasMTR */
 
-// import 'bas-meteor-utils'
 import './init'
-// import './lib'
 
 if (Meteor.isServer) {
   require('./server')

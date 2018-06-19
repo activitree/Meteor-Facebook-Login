@@ -9,11 +9,6 @@ const FB_API_Login_Handler_ = (mtr => {
 // ------------------------------------------------------------------------
 // Constants
 // ------------------------------------------------------------------------
-  const VERSION = BasMTR.Utils.VERSION
-
-  // ------------------------------------------------------------------------
-  // Vars
-  // ------------------------------------------------------------------------
 
   // Include all fields from facebook
   // http://developers.facebook.com/docs/reference/login/public-profile-and-friend-list/
@@ -27,10 +22,6 @@ const FB_API_Login_Handler_ = (mtr => {
   class FB_API_Login_Handler_ {
     // Getters
     // ------------------------------------------------------------------------
-
-    static get VERSION () {
-      return VERSION
-    }
 
     // Static
     // ------------------------------------------------------------------------

@@ -5,23 +5,10 @@ import pick from 'lodash.pick'
 
 const FB_API_ = (mtr => {
   // ------------------------------------------------------------------------
-  // Constants
-  // ------------------------------------------------------------------------
-
-  const VERSION = BasMTR.Utils.VERSION
-
-  // ------------------------------------------------------------------------
   // Class Definition
   // ------------------------------------------------------------------------
 
   class FB_API_ {
-    static get VERSION () {
-      return VERSION
-    }
-
-    // Static
-    // ------------------------------------------------------------------------
-
     static login (options, callback) {
       // Default login
       if (!mtr.isCordova || typeof facebookConnectPlugin === 'undefined') {
