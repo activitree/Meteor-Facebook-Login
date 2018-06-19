@@ -1,7 +1,7 @@
 /* globals Meteor, facebookConnectPlugin, Accounts, BasMTR */
 
-import assign from 'lodash.assign'
-import pickBy from 'lodash.pickby'
+import assign from 'lodash/assign'
+import pickBy from 'lodash/pickBy'
 
 const FB_API_ = (mtr => {
   // ------------------------------------------------------------------------

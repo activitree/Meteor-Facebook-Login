@@ -1,7 +1,7 @@
 /* globals BasMTR, Accounts, Meteor, HTTP */
 /* eslint-disable camelcase */
 
-import assign from 'lodash.assign'
+import assign from 'lodash/assign'
 import chai from 'chai'
 let expect = chai.expect
 

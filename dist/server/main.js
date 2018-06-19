@@ -23,8 +23,8 @@ var _createClass = (function () {
   }
 })()
 
-const _assign = require('lodash.assign')
-const _assign2 = _interopRequireDefault(_assign)
+const _lodash = require('lodash')
+const _lodash2 = _interopRequireDefault(_lodash)
 
 const _chai = require('chai')
 
@@ -87,7 +87,7 @@ var FB_API_Login_Handler_ = (function (mtr) {
 
         if (!user) {
           var identity = FB_API_Login_Handler_.getIdentity(options.accessToken)
-          _assign2(identity, {
+          _lodash2.default.assign(identity, {
             accessToken: options.accessToken,
             expiresAt: +new Date() + 1000 * options.expiresIn
           })
