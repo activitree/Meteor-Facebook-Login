@@ -1,18 +1,14 @@
-import 'bas-meteor-utils';
+/* globals Meteor, BasMTR */
 
-// Import Init
-import './init';
+// import 'bas-meteor-utils'
+import './init'
+import './lib'
 
-// Import libs
-import './lib';
-
-// Is Server
 if (Meteor.isServer) {
-    require('./server');
+  require('./server')
 }
 
-// Is Client
 if (Meteor.isClient) {
-    require('./client');
-    exports.FB_API = BasMTR.FB_API;
+  require('./client')
+  exports.FB_API = BasMTR.FB_API
 }

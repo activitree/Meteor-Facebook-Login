@@ -1,116 +1,104 @@
-"use strict";
+/* globals BasMTR, Meteor, Accounts, facebookConnectPlugin */
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+'use strict'
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+Object.defineProperty(exports, '__esModule', {
+  value: true
+})
 
-var _underscore = require("underscore");
+var _createClass = (function () {
+  function defineProperties (target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i]
+      descriptor.enumerable = descriptor.enumerable || false
+      descriptor.configurable = true
+      if ('value' in descriptor) descriptor.writable = true
+      Object.defineProperty(target, descriptor.key, descriptor)
+    }
+  }
 
-var _underscore2 = _interopRequireDefault(_underscore);
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps)
+    if (staticProps) defineProperties(Constructor, staticProps)
+    return Constructor
+  }
+})()
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _assign = require('lodash.assign')
+var _assign2 = _interopRequireDefault(_assign)
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _pick = require('lodash.pick')
+var _pick2 = _interopRequireDefault(_pick)
 
-var FB_API_ = function (mtr) {
+function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : {default: obj} }
 
-    // ------------------------------------------------------------------------
-    // Constants
-    // ------------------------------------------------------------------------
+function _classCallCheck (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function')
+  }
+}
 
-    var VERSION = BasMTR.Utils.VERSION;
+var FB_API_ = (function (mtr) {
+  // ------------------------------------------------------------------------
+  // Constants
+  // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Vars
-    // ------------------------------------------------------------------------
+  var VERSION = BasMTR.Utils.VERSION
 
+  // ------------------------------------------------------------------------
+  // Class Definition
+  // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Class Definition
-    // ------------------------------------------------------------------------
+  var FB_API_ = (function () {
+    function FB_API_ () {
+      _classCallCheck(this, FB_API_)
+    }
 
-    var FB_API_ = function () {
-        function FB_API_() {
-            _classCallCheck(this, FB_API_);
+    _createClass(FB_API_, null, [{
+      key: 'login',
+
+      // Static
+      // ------------------------------------------------------------------------
+      value: function login (options, callback) {
+        // Default login
+        if (!mtr.isCordova || typeof facebookConnectPlugin === 'undefined') {
+          return mtr.loginWithFacebook(options, callback)
         }
 
-        // Getters
-        // ------------------------------------------------------------------------
+        // support a callback without options
+        if (!callback && typeof options === 'function') {
+          callback = options
+          options = {
+            'requestPermissions': ['public_profile', 'email', 'user_friends']
+          }
+        }
 
-        _createClass(FB_API_, null, [{
-            key: "login",
+        // Native login
+        facebookConnectPlugin.login(options.requestPermissions, function (res) {
+          var opts = _assign2(_pick2(res.authResponse,
+            ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
+          Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
+        }, function (err) {
+          console.error('err', err)
+          callback(err, null)
+        })
+      }
 
+      // Static Private
+      // ------------------------------------------------------------------------
 
-            // Public
-            // ------------------------------------------------------------------------
+    }, {
+      key: 'VERSION',
+      get: function get () {
+        return VERSION
+      }
+    }])
 
+    return FB_API_
+  })()
 
-            // Static
-            // ------------------------------------------------------------------------
+  return FB_API_
+})(Meteor)
 
-            value: function login(options, callback) {
-
-                // Default login
-                if (!mtr.isCordova || typeof facebookConnectPlugin === "undefined") {
-                    return mtr.loginWithFacebook(options, callback);
-                }
-
-                // support a callback without options
-                if (!callback && typeof options === "function") {
-                    callback = options;
-                    options = {
-                        "requestPermissions": ["public_profile", "email", "user_friends"]
-                    };
-                }
-
-                // Native login
-                facebookConnectPlugin.login(options.requestPermissions, function (res) {
-                    var opts = _underscore2.default.extend(_underscore2.default.pick(res.authResponse, ['accessToken', 'expiresIn', 'userID']), { methodName: "native-facebook" });
-                    Accounts.callLoginMethod({ methodArguments: [opts], userCallback: callback });
-                }, function (err) {
-                    console.error("err", err);
-                    callback(err, null);
-                });
-            }
-
-            // Static Private
-            // ------------------------------------------------------------------------
-
-
-        }, {
-            key: "VERSION",
-            get: function get() {
-                return VERSION;
-            }
-        }]);
-
-        return FB_API_;
-    }();
-
-    // ------------------------------------------------------------------------
-    // Init
-    // ------------------------------------------------------------------------
-
-    // Methods
-
-
-    mtr.methods({
-        //...
-    });
-
-    // ------------------------------------------------------------------------
-    // Meteor
-    // ------------------------------------------------------------------------
-
-    // Meteor startup
-    mtr.startup(function () {
-        //...
-    });
-
-    return FB_API_;
-}(Meteor);
-
-BasMTR.FB_API = FB_API_;
-exports.default = FB_API_;
+BasMTR.FB_API = FB_API_
+exports.default = FB_API_

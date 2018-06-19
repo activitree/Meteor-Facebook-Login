@@ -1,95 +1,53 @@
-import _ from 'underscore';
+/* globals Meteor, facebookConnectPlugin, Accounts, BasMTR */
 
-const FB_API_ = ((mtr) => {
+import assign from 'lodash.assign'
+import pick from 'lodash.pick'
 
-    // ------------------------------------------------------------------------
-    // Constants
-    // ------------------------------------------------------------------------
+const FB_API_ = (mtr => {
+  // ------------------------------------------------------------------------
+  // Constants
+  // ------------------------------------------------------------------------
 
-    const VERSION = BasMTR.Utils.VERSION;
+  const VERSION = BasMTR.Utils.VERSION
 
-    // ------------------------------------------------------------------------
-    // Vars
-    // ------------------------------------------------------------------------
+  // ------------------------------------------------------------------------
+  // Class Definition
+  // ------------------------------------------------------------------------
 
-
-
-    // ------------------------------------------------------------------------
-    // Class Definition
-    // ------------------------------------------------------------------------
-
-    class FB_API_ {
-
-        constructor() {
-
-        }
-
-        // Getters
-        // ------------------------------------------------------------------------
-
-        static get VERSION() {
-            return VERSION;
-        }
-
-        // Public
-        // ------------------------------------------------------------------------
-
-
-        // Static
-        // ------------------------------------------------------------------------
-
-        static login(options, callback) {
-
-            // Default login
-            if (!mtr.isCordova || typeof facebookConnectPlugin === "undefined") {
-                return mtr.loginWithFacebook(options, callback);
-            }
-
-            // support a callback without options
-            if (!callback && typeof options === "function") {
-                callback = options;
-                options  = {
-                    "requestPermissions": ["public_profile", "email", "user_friends"]
-                };
-            }
-
-            // Native login
-            facebookConnectPlugin.login(options.requestPermissions, function (res) {
-                let opts = _.extend(_.pick(res.authResponse, ['accessToken', 'expiresIn', 'userID']), {methodName: "native-facebook"});
-                Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback});
-            }, function (err) {
-                console.error("err", err);
-                callback(err, null);
-            });
-        }
-
-        // Static Private
-        // ------------------------------------------------------------------------
-
-
+  class FB_API_ {
+    static get VERSION () {
+      return VERSION
     }
 
-    // ------------------------------------------------------------------------
-    // Init
-    // ------------------------------------------------------------------------
-
-    // Methods
-    mtr.methods({
-        //...
-    });
-
-    // ------------------------------------------------------------------------
-    // Meteor
+    // Static
     // ------------------------------------------------------------------------
 
-    // Meteor startup
-    mtr.startup(function () {
-        //...
-    });
+    static login (options, callback) {
+      // Default login
+      if (!mtr.isCordova || typeof facebookConnectPlugin === 'undefined') {
+        return mtr.loginWithFacebook(options, callback)
+      }
 
-    return FB_API_;
+      // support a callback without options
+      if (!callback && typeof options === 'function') {
+        callback = options
+        options = {
+          'requestPermissions': ['public_profile', 'email', 'user_friends']
+        }
+      }
 
-})(Meteor);
+      // Native login
+      facebookConnectPlugin.login(options.requestPermissions, function (res) {
+        let opts = assign(pick(res.authResponse, ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
+        Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
+      }, function (err) {
+        console.error('err', err)
+        callback(err, null)
+      })
+    }
+  }
+  return FB_API_
+})(Meteor)
 
-BasMTR.FB_API = FB_API_;
-export default FB_API_;
+BasMTR.FB_API = FB_API_
+export default FB_API_

@@ -1,3 +1,4 @@
-"use strict";
+/* globals BasMTR */
+'use strict'
 
-BasMTR.FB_API = {};
+BasMTR.FB_API = {}
