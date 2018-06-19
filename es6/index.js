@@ -1,6 +1,6 @@
 /* globals Meteor, BasMTR */
 
-import 'bas-meteor-utils'
+// import 'bas-meteor-utils'
 import './init'
 // import './lib'
 
