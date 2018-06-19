@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/Basgrani-Org/bas-meteor-facebook-logino#readme",
   "dependencies": {
-    "bas-meteor-utils": "*",
     "chai": "^4.1.2",
     "lodash.assign": "^4.2.0",
     "lodash.pick": "^4.4.0"
