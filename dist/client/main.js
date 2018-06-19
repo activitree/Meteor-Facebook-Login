@@ -27,8 +27,8 @@ var _createClass = (function () {
 var _assign = require('lodash.assign')
 var _assign2 = _interopRequireDefault(_assign)
 
-var _pick = require('lodash.pick')
-var _pick2 = _interopRequireDefault(_pick)
+var _pickBy = require('lodash.pickby')
+var _pickBy2 = _interopRequireDefault(_pickBy)
 
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : {default: obj} }
 
@@ -75,7 +75,7 @@ var FB_API_ = (function (mtr) {
 
         // Native login
         facebookConnectPlugin.login(options.requestPermissions, function (res) {
-          var opts = _assign2(_pick2(res.authResponse,
+          var opts = _assign2(_pickBy2(res.authResponse,
             ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
           Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
         }, function (err) {

@@ -1,7 +1,7 @@
 /* globals Meteor, facebookConnectPlugin, Accounts, BasMTR */
 
 import assign from 'lodash.assign'
-import pick from 'lodash.pick'
+import pickBy from 'lodash.pickby'
 
 const FB_API_ = (mtr => {
   // ------------------------------------------------------------------------
@@ -25,7 +25,7 @@ const FB_API_ = (mtr => {
 
       // Native login
       facebookConnectPlugin.login(options.requestPermissions, function (res) {
-        let opts = assign(pick(res.authResponse, ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
+        let opts = assign(pickBy(res.authResponse, ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
         Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
       }, function (err) {
         console.error('err', err)
