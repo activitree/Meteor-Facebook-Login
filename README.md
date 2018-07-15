@@ -1,4 +1,4 @@
-# Native Facebook SDK login for Meteor (v1.4.3+)
+# Native Facebook SDK login for Meteor (v1.7+) with Graph API V3.0
 
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9EARMSN5WMDDY)
 
