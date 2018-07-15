@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### v1.2.1 (June 15, 2018)
+**New**
+- Taken over (copied) from Basgrani
+- Decoupled from outdated bas-meteor-utils
+- Removed useless dependencies
+
 ### v1.2.0 (Mar 10, 2017)
 
 **New**
