@@ -1,11 +1,11 @@
-/* globals BasMTR */
+/* globals MTR */
 'use strict'
 
-if (typeof global !== 'undefined' && typeof global.BasMTR === 'undefined') {
-  global.BasMTR = {}
+if (typeof global !== 'undefined' && typeof global.MTR === 'undefined') {
+  global.MTR = {}
 }
-if (typeof window !== 'undefined' && typeof window.BasMTR === 'undefined') {
-  window.BasMTR = {}
+if (typeof window !== 'undefined' && typeof window.MTR === 'undefined') {
+  window.MTR = {}
 }
 
-BasMTR.FB_API = {}
+MTR.FB_API = {}

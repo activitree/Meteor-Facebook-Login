@@ -1,4 +1,4 @@
-/* globals Meteor, BasMTR */
+/* globals Meteor, MTR */
 'use strict'
 require('./init')
 
@@ -8,5 +8,5 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   require('./client')
-  exports.FB_API = BasMTR.FB_API
+  exports.FB_API = MTR.FB_API
 }

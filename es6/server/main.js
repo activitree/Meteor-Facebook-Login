@@ -1,4 +1,4 @@
-/* globals BasMTR, Accounts, Meteor, HTTP */
+/* globals MTR, Accounts, Meteor, HTTP */
 /* eslint-disable camelcase */
 
 import assign from 'lodash/assign'
@@ -90,5 +90,5 @@ const FB_API_Login_Handler_ = (mtr => {
   return FB_API_Login_Handler_
 })(Meteor)
 
-BasMTR.FB_API_Login_Handler = FB_API_Login_Handler_
+MTR.FB_API_Login_Handler = FB_API_Login_Handler_
 export default FB_API_Login_Handler_

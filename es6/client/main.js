@@ -1,4 +1,4 @@
-/* globals Meteor, facebookConnectPlugin, Accounts, BasMTR */
+/* globals Meteor, facebookConnectPlugin, Accounts, MTR */
 
 import assign from 'lodash/assign'
 import pick from 'lodash/pick'
@@ -36,5 +36,5 @@ const FB_API_ = (mtr => {
   return FB_API_
 })(Meteor)
 
-BasMTR.FB_API = FB_API_
+MTR.FB_API = FB_API_
 export default FB_API_

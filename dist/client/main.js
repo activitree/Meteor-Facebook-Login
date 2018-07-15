@@ -1,4 +1,4 @@
-/* globals BasMTR, Meteor, Accounts, facebookConnectPlugin */
+/* globals MTR, Meteor, Accounts, facebookConnectPlugin */
 
 'use strict'
 
@@ -40,7 +40,7 @@ var FB_API_ = (function (mtr) {
   // Constants
   // ------------------------------------------------------------------------
 
-  // var VERSION = BasMTR.Utils.VERSION
+  // var VERSION = MTR.Utils.VERSION
 
   // ------------------------------------------------------------------------
   // Class Definition
@@ -89,5 +89,5 @@ var FB_API_ = (function (mtr) {
   return FB_API_
 })(Meteor)
 
-BasMTR.FB_API = FB_API_
+MTR.FB_API = FB_API_
 exports.default = FB_API_

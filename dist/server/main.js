@@ -1,4 +1,4 @@
-/* globals BasMTR, Accounts, Meteor, HTTP */
+/* globals MTR, Accounts, Meteor, HTTP */
 'use strict'
 
 Object.defineProperty(exports, '__esModule', {
@@ -136,5 +136,5 @@ var FB_API_Login_Handler_ = (function (mtr) {
   return FB_API_Login_Handler_
 })(Meteor)
 
-BasMTR.FB_API_Login_Handler = FB_API_Login_Handler_
+MTR.FB_API_Login_Handler = FB_API_Login_Handler_
 exports.default = FB_API_Login_Handler_

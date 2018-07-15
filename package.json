@@ -1,14 +1,14 @@
 {
   "name": "meteor-facebook-login",
-  "version": "1.2.1",
-  "description": "Use native api to login with Facebook. Updated after Jorge Gonzalez",
+  "version": "1.2.2",
+  "description": "Use native api to login with Facebook. Updated after Jorge Gonzalez - bas-meteor-facebook-login",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://Basgrani@github.com/Basgrani-Org/bas-meteor-facebook-login.git"
+    "url": "git+https://github.com/paulincai/meteor-facebook-login.git"
   },
   "keywords": [
     "meteor",
@@ -19,9 +19,9 @@
   "author": "Paul Ailincai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Basgrani-Org/bas-meteor-facebook-login/issues"
+    "url": "https://github.com/paulincai/meteor-facebook-login/issues"
   },
-  "homepage": "https://github.com/Basgrani-Org/bas-meteor-facebook-logino#readme",
+  "homepage": "https://github.com/paulincai/meteor-facebook-login/blob/master/README.md",
   "dependencies": {
     "chai": "^4.1.2",
     "lodash": "^4.17.10"

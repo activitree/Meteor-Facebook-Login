@@ -52,5 +52,5 @@ FB_API.login(function(err) {
 ```
 
 ## License
-
+MIT
 - 
