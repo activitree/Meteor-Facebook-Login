@@ -41,7 +41,7 @@ var FB_API_Login_Handler_ = (function (mtr) {
   // Include all fields from facebook
   // http://developers.facebook.com/docs/reference/login/public-profile-and-friend-list/
   var _fields = ['id', 'email', 'name', 'first_name', 'last_name', 'link', 'gender', 'locale', 'age_range']
-  var _apiUri = 'https://graph.facebook.com/v1.12/me'
+  var _apiUri = 'https://graph.facebook.com/v3.0/me'
 
   // ------------------------------------------------------------------------
   // Class Definition
