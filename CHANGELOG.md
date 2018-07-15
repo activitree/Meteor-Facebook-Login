@@ -5,6 +5,9 @@
 - Taken over (copied) from Basgrani
 - Decoupled from outdated bas-meteor-utils
 - Removed useless dependencies
+- Cleaned up code into a more standard lint version
+- Updated Facebook Graph API version to 3.0
+- Tested ok with Meteor 1.7 +
 
 ### v1.2.0 (Mar 10, 2017)
 
