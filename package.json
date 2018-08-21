@@ -1,6 +1,6 @@
 {
   "name": "meteor-facebook-login",
-  "version": "1.2.3",
+  "version": "1.2.3_1",
   "description": "Use native api to login with Facebook. Updated after Jorge Gonzalez - bas-meteor-facebook-login",
   "main": "dist/index.js",
   "scripts": {

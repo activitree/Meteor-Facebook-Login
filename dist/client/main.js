@@ -69,7 +69,7 @@ var FB_API_ = (function (mtr) {
           // After I acquire token, do log out so that I can allow multiple users.
           // If I don't log out, Cordova remains logged in with this user and there is no way to
           // log in another user or use FB Graph for other users logged in via email or google.
-          facebookConnectPlugin.logout()
+          facebookConnectPlugin.logout(res => console.log('did log out in the package', res), err => console.log('an error in the package logout.', err) )
         }, function (err) {
           console.error('err', err)
           callback(err, null)
