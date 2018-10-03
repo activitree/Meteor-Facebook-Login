@@ -16,7 +16,7 @@ meteor npm install meteor-facebook-login
 
 ```
 meteor add http
-meteor add cordova:cordova-plugin-facebook4@2.2.0
+meteor add cordova:cordova-plugin-facebook4@3.0.0
 ```
 
 - Setup cordova plugin (mobile-config.js):
