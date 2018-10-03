@@ -51,6 +51,10 @@ FB_API.login(function(err) {
 });
 ```
 
+Also tested with IOS 12, cordova-ios 4.5.5, cordova 8.1.1, cordova-android 7.1.1
+
+
+
 ## License
 MIT
 - 
