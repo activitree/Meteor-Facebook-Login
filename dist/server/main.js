@@ -30,18 +30,17 @@ const _chai = require('chai')
 
 const _chai2 = _interopRequireDefault(_chai)
 
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : {default: obj} }
+function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
 function _classCallCheck (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function') } }
 
 var expect = _chai2.default.expect
 
 var FB_API_Login_Handler_ = (function (mtr) {
-
   // Include all fields from facebook
   // http://developers.facebook.com/docs/reference/login/public-profile-and-friend-list/
   var _fields = ['id', 'email', 'name', 'first_name', 'last_name', 'link', 'gender', 'locale', 'age_range']
-  var _apiUri = 'https://graph.facebook.com/v3.0/me'
+  var _apiUri = 'https://graph.facebook.com/v3.2/me'
 
   // ------------------------------------------------------------------------
   // Class Definition

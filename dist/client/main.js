@@ -36,7 +36,6 @@ function _classCallCheck (instance, Constructor) {
 }
 
 var FB_API_ = (function (mtr) {
-
   var FB_API_ = (function () {
     function FB_API_ () {
       _classCallCheck(this, FB_API_)
@@ -63,9 +62,9 @@ var FB_API_ = (function (mtr) {
 
         facebookConnectPlugin.login(options.requestPermissions, function (res) {
           var opts = _lodash2.default.assign(_lodash2.default.pick(res.authResponse,
-            ['accessToken', 'expiresIn', 'userID']), {methodName: 'native-facebook'})
+            ['accessToken', 'expiresIn', 'userID']), { methodName: 'native-facebook' })
 
-          Accounts.callLoginMethod({methodArguments: [opts], userCallback: callback})
+          Accounts.callLoginMethod({ methodArguments: [opts], userCallback: callback })
           // After I acquire token, do log out so that I can allow multiple users.
           // If I don't log out, Cordova remains logged in with this user and there is no way to
           // log in another user or use FB Graph for other users logged in via email or google.
