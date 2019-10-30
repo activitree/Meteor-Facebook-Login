@@ -1,5 +1,7 @@
 # Native Facebook SDK login for Meteor (v1.7+) with Graph API V3.2
 
+<a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed." /></a>
+
 This package use [cordova-plugin-facebook4](https://www.npmjs.com/package/cordova-plugin-facebook4)
 
 Documentation of the Cordova plugin [here](https://www.npmjs.com/package/cordova-plugin-facebook4)
